@@ -33,9 +33,10 @@ form.addEventListener("submit", async (event) => {
   }
 
   const formData = new FormData(form);
-  const payload = {
+    const payload = {
     name: formData.get("name"),
     email: formData.get("email"),
+    subject: formData.get("subject"), // <-- Вставьте эту строку
     phone: formData.get("phone"),
     message: formData.get("message"),
     website: formData.get("website"),

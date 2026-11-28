@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Обратная связь</title>
+  <title>Обратная связь | Информационная система кафедры</title>
   <meta name="description" content="Учебная форма обратной связи с отправкой в Telegram">
   <link rel="stylesheet" href="/style.css">
   <script src="/script.js" defer></script>
@@ -12,8 +12,15 @@
   <main class="page">
     <section class="contact-card" aria-labelledby="contact-title">
       <div class="contact-card__intro">
-        <p class="eyebrow">Облачный портал университета</p>
+        <p class="eyebrow">Информационная система кафедры</p>
         <h1 id="contact-title">Форма обратной связи</h1>
+        
+        <!-- Блок с данными студента -->
+        <div style="background: rgba(255, 255, 255, 0.1); padding: 16px; border-radius: 12px; margin-bottom: 24px; border: 1px solid rgba(255, 255, 255, 0.2);">
+          <p style="margin: 0 0 6px 0; font-weight: 700; color: #ffffff; font-size: 1.05rem;">Боголюбова Мария Андреевна</p>
+          <p style="margin: 0; color: #bcd4ff; font-size: 0.9rem;">Группа: 4-МД-5</p>
+        </div>
+
         <p>Заполните поля — сообщение будет проверено и передано администратору сайта.</p>
 
         <ul class="advantages">
@@ -35,6 +42,17 @@
           <label for="email">Электронная почта <span aria-hidden="true">*</span></label>
           <input id="email" name="email" type="email" maxlength="120"
                  autocomplete="email" placeholder="student@example.com" required>
+        </div>
+
+        <!-- НОВОЕ ПОЛЕ: Тема обращения -->
+        <div class="field">
+          <label for="subject">Тема обращения <span aria-hidden="true">*</span></label>
+          <select id="subject" name="subject" required style="width: 100%; border: 1px solid var(--border); border-radius: 12px; padding: 13px 14px; color: var(--text); background: #fbfcfe; font: inherit; outline: none; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s;">
+            <option value="" disabled selected>Выберите тему...</option>
+            <option value="Учебный вопрос">Учебный вопрос</option>
+            <option value="Техническая проблема">Техническая проблема</option>
+            <option value="Другое">Другое</option>
+          </select>
         </div>
 
         <div class="field">

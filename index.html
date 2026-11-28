@@ -11,14 +11,16 @@
 <body>
   <main class="page">
     <section class="contact-card" aria-labelledby="contact-title">
+      
+      <!-- ЛЕВАЯ ПАНЕЛЬ (Оранжевая) -->
       <div class="contact-card__intro">
         <p class="eyebrow">Информационная система кафедры</p>
         <h1 id="contact-title">Форма обратной связи</h1>
         
         <!-- Блок с данными студента -->
-        <div style="background: rgba(255, 255, 255, 0.1); padding: 16px; border-radius: 12px; margin-bottom: 24px; border: 1px solid rgba(255, 255, 255, 0.2);">
+        <div style="background: rgba(255, 255, 255, 0.15); padding: 16px; border-radius: 12px; margin-bottom: 24px; border: 1px solid rgba(255, 255, 255, 0.3);">
           <p style="margin: 0 0 6px 0; font-weight: 700; color: #ffffff; font-size: 1.05rem;">Боголюбова Мария Андреевна</p>
-          <p style="margin: 0; color: #bcd4ff; font-size: 0.9rem;">Группа: 4-МД-5</p>
+          <p style="margin: 0; color: #ffedd5; font-size: 0.9rem;">Группа: 4-МД-5</p>
         </div>
 
         <p>Заполните поля — сообщение будет проверено и передано администратору сайта.</p>
@@ -30,6 +32,7 @@
         </ul>
       </div>
 
+      <!-- ПРАВАЯ ПАНЕЛЬ (Форма) -->
       <form id="contact-form" class="contact-form" novalidate>
         <div class="field">
           <label for="name">Имя <span aria-hidden="true">*</span></label>
@@ -44,7 +47,7 @@
                  autocomplete="email" placeholder="student@example.com" required>
         </div>
 
-        <!-- НОВОЕ ПОЛЕ: Тема обращения -->
+        <!-- Тема обращения -->
         <div class="field">
           <label for="subject">Тема обращения <span aria-hidden="true">*</span></label>
           <select id="subject" name="subject" required style="width: 100%; border: 1px solid var(--border); border-radius: 12px; padding: 13px 14px; color: var(--text); background: #fbfcfe; font: inherit; outline: none; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s;">

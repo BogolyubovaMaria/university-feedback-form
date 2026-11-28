@@ -2,7 +2,8 @@ const limits = {
   name: 60,
   email: 120,
   phone: 25,
-  message: 1500
+  message: 1500,
+  subject: 50 // Добавили лимит для темы
 };
 
 function json(data, status = 200) {
@@ -23,7 +24,7 @@ function normalize(value, maxLength) {
 }
 
 function isEmail(value) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(value);
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/i.test(value);
 }
 
 function isPhone(value) {
@@ -64,6 +65,7 @@ export default {
     const email = normalize(body.email, limits.email).toLowerCase();
     const phone = normalize(body.phone, limits.phone);
     const message = normalize(body.message, limits.message);
+    const subject = normalize(body.subject, limits.subject); // Получаем тему
     const consent = body.consent === true;
 
     if (name.length < 2) {
@@ -81,6 +83,11 @@ export default {
     if (!consent) {
       return json({ error: "Необходимо подтвердить согласие на обработку данных." }, 400);
     }
+    
+    // Серверная проверка темы обращения
+    if (!["Учебный вопрос", "Техническая проблема", "Другое"].includes(subject)) {
+      return json({ error: "Выберите корректную тему обращения." }, 400);
+    }
 
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -95,10 +102,12 @@ export default {
       timeZone: "Europe/Moscow"
     }).format(new Date());
 
+    // Добавили тему в текст сообщения для Telegram
     const telegramText = [
       "📩 Новое обращение с сайта",
       "",
       `Имя: ${name}`,
+      `Тема: ${subject}`, 
       `Email: ${email}`,
       `Телефон: ${phone || "не указан"}`,
       "",

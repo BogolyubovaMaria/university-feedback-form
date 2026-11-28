@@ -1,12 +1,15 @@
 :root {
   color-scheme: light;
-  --background: #eef3f8;
+  --background: #fff7ed; /* Очень светлый оранжевый фон страницы */
   --surface: #ffffff;
   --text: #182230;
   --muted: #617083;
-  --primary: #8b5cf6;
-  --primary-hover: #004eeb;
-  --border: #d7e0ea;
+  
+  /* Оранжевая цветовая схема */
+  --primary: #ea580c;       /* Основной оранжевый */
+  --primary-hover: #c2410c; /* Темно-оранжевый для наведения */
+  
+  --border: #fed7aa; /* Оранжевая рамка у полей */
   --success-bg: #eaf8ef;
   --success-text: #176b3a;
   --error-bg: #fff0f0;
@@ -22,7 +25,7 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top left, rgba(21, 94, 239, 0.14), transparent 34rem),
+    radial-gradient(circle at top left, rgba(234, 88, 12, 0.14), transparent 34rem),
     var(--background);
   color: var(--text);
 }
@@ -40,15 +43,16 @@ body {
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   overflow: hidden;
   background: var(--surface);
-  border: 1px solid rgba(215, 224, 234, 0.8);
+  border: 1px solid rgba(254, 215, 170, 0.8);
   border-radius: 24px;
-  box-shadow: 0 24px 70px rgba(31, 48, 74, 0.14);
+  box-shadow: 0 24px 70px rgba(120, 53, 15, 0.14);
 }
 
+/* Оранжевый градиент для левой панели */
 .contact-card__intro {
   padding: 56px 46px;
   color: #ffffff;
-  background: linear-gradient(145deg, #0b4ecc, #173d8f);
+  background: linear-gradient(145deg, #f97316, #9a3412);
 }
 
 .eyebrow {
@@ -57,7 +61,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #bcd4ff;
+  color: #ffedd5; /* Светло-оранжевый текст */
 }
 
 h1 {
@@ -68,7 +72,7 @@ h1 {
 
 .contact-card__intro > p:not(.eyebrow) {
   margin: 0;
-  color: #dbe7ff;
+  color: #ffedd5;
   line-height: 1.7;
 }
 
@@ -83,7 +87,7 @@ h1 {
 .advantages li {
   position: relative;
   padding-left: 28px;
-  color: #eef4ff;
+  color: #fff7ed;
   line-height: 1.5;
 }
 
@@ -91,7 +95,7 @@ h1 {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #8fb7ff;
+  color: #fdba74; /* Оранжевая галочка */
   font-weight: 800;
 }
 
@@ -128,7 +132,7 @@ textarea {
   border-radius: 12px;
   padding: 13px 14px;
   color: var(--text);
-  background: #fbfcfe;
+  background: #fffaf5; /* Легкий оранжевый оттенок для полей */
   font: inherit;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
@@ -140,14 +144,16 @@ textarea {
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   border-color: var(--primary);
   background: #ffffff;
-  box-shadow: 0 0 0 4px rgba(21, 94, 239, 0.12);
+  box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.12); /* Оранжевая тень при фокусе */
 }
 
 input:user-invalid,
-textarea:user-invalid {
+textarea:user-invalid,
+select:user-invalid {
   border-color: #d92d20;
 }
 
